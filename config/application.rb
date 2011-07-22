@@ -38,5 +38,16 @@ module RProAPI2
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    # Configure devise
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    
+    # Configure sign page layout
+    config.to_prepare do
+      Devise::SessionsController.layout "sign"
+      Devise::RegistrationsController.layout "sign"
+      Devise::PasswordsController.layout "sign"
+    end
+    
   end
 end

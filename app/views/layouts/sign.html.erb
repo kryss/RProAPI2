@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RProAPIv2</title>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", :cache => true %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="box">
+		<h1><%= link_to t(:title), root_path  %> </h1>
+		<div class='block' id='block-login'>
+			<h2><%= yield :sign_title %></h2>
+			<div class='content login'>
+				<div class="flash">
+			        <% flash.each do |type, message| -%>
+			          <div class="message <%= type %>">
+			            <p><%= message %></p>
+			          </div>
+			        <% end -%>
+			      </div>
+      			<%= yield %>
+            </div>
+		</div>
+    </div>
+  </div>
+</body>
+</html>

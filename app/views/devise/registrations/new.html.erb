@@ -1,0 +1,42 @@
+<% content_for :sign_title, "Sign up" -%>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form login" }) do |f| %>
+
+  <%= devise_error_messages! %>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :email, :class => "label right" %></div>
+		  <div class='right'><%= f.email_field :email, :class => "text_field" %></div>
+	</div>
+	
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :username, :class => "label right" %></div>
+		  <div class='right'><%= f.text_field :username, :class => "text_field" %></div>
+	</div>
+	
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :phone, :class => "label right" %></div>
+		  <div class='right'><%= f.text_field :phone, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password, :class => "label right" %></div>
+		  <div class='right'><%= f.password_field :password, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password_confirmation, :class => "label right" %></div>
+		  <div class='right'><%= f.password_field :password_confirmation, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		<div class='right'>
+			<button class='button' type='submit'>
+				<%= image_tag  "/images/web-app-theme/icons/tick.png" %>
+		      Sign up
+		    </button>
+		</div>
+	</div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

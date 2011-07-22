@@ -1,0 +1,28 @@
+<% content_for :sign_title, "Change your password" -%>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => "form login"  }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password, "New password", :class => "label right" %></div>
+		  <div class='right'><%= f.password_field :password, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password_confirmation, "Confirm new password", :class => "label right" %></div>
+		  <div class='right'><%= f.password_field :password_confirmation, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		<div class='right'>
+			<button class='button' type='submit'>
+				<%= image_tag  "/images/web-app-theme/icons/tick.png" %>
+		      	Change my password
+		    </button>
+		</div>
+	</div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

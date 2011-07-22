@@ -1,0 +1,52 @@
+<% content_for :sign_title, "Edit #{resource_name.to_s.humanize}" -%>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put,  :class => "form login" }) do |f| %>
+
+  <%= devise_error_messages! %>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :email, :class => "label right" %></div>
+		  <div class='right'><%= f.email_field :email, :class => "text_field" %></div>
+	</div>
+	
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :username, :class => "label right" %></div>
+		  <div class='right'><%= f.text_field :username, :class => "text_field" %></div>
+	</div>
+	
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :phone, :class => "label right" %></div>
+		  <div class='right'><%= f.text_field :phone, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password, :class => "label right" %><i>(leave blank if you don't want to change it)</i></div>
+		  <div class='right'><%= f.password_field :password, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :password_confirmation, :class => "label right" %></div>
+		  <div class='right'><%= f.password_field :password_confirmation, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label :current_password, :class => "label right" %><i>(we need your current password to confirm your changes)</div>
+		  <div class='right'><%= f.password_field :current_password, :class => "text_field" %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		  <div class='left'><%= f.label t(:token), :class => "label right" %></div>
+		  <div class='right'><%= f.label get_current_user_token, :class => "text_field", :read_only => true %></div>
+	</div>
+
+	<div class='group wat-cf'>
+		<div class='right'>
+			<button class='button' type='submit'>
+		      <img alt="Key" src="/images/web-app-theme/icons/key.png?1311221144" />
+		      Update
+		    </button>
+		</div>
+	</div>
+<% end %>
+
+<%= link_to "Back", :back %>
