@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :phone
   
   validates_presence_of :username, :phone
+  has_many :locals
 end

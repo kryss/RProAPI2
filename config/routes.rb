@@ -1,6 +1,15 @@
 RProAPI2::Application.routes.draw do
-  devise_for :users
+  get "users/index"
 
+  get "users/show"
+
+  resources :locals
+
+  devise_for :users
+  
+  
+  match 'users/:id' => 'users#show', :as => :show_user
+  
   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

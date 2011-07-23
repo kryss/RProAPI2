@@ -5,3 +5,4 @@ en:
   hello: "Hello world"
   title: "RProAPIv2"
   token: "Your token is"
+  user_stat: "Overview"

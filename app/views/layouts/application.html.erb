@@ -19,10 +19,9 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf">
-          <li class="first"><a href="#block-text">Main Page</a></li>
-          <li class="active"><a href="#block-text">Active</a></li>
-          <li><a href="#block-login">Login</a></li>
-          <li><a href="#block-signup">Signup</a></li>
+         <li class="<%= session[:current_page][0] %>"> <%= link_to	t(:user_stat), show_user_path(current_user.id) %></li>
+          <li class="<%= session[:current_page][1] %>">  <a href="#block-text">Menu2</a></li>
+          <li class="<%= session[:current_page][2] %>">  <a href="#block-signup">Menu3</a></li>
         </ul>
       </div>
     </div>    
