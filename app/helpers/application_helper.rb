@@ -9,4 +9,10 @@ module ApplicationHelper
       "TOKEN ERROR !"
     end
   end
+  
+  def active_tab?(local)
+    "active" if (params[:controller] == "locals" and params[:id] == local.id.to_s)
+  end
+  
+  
 end

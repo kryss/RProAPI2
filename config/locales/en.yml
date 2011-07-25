@@ -6,3 +6,5 @@ en:
   title: "RProAPIv2"
   token: "Your token is"
   user_stat: "Overview"
+  ask_create_local: "You don't have any local yet please create a local : "
+  bt_create_local: "Create a new local"

@@ -1,5 +1,9 @@
-<h1>New local</h1>
-
+<% content_for :block_content do %>
 <%= render 'form' %>
 
 <%= link_to 'Back', locals_path %>
+<% end %>
+
+<%= render 'shared/block_content', :subtitle => "New local" %>
+
+

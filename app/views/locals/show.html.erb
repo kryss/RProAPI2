@@ -1,3 +1,7 @@
+
+
+
+<% content_for :block_content do %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -26,10 +30,13 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @local.user %>
+  <b>Owner:</b>
+  <%= @local.user.username %>
 </p>
 
 
 <%= link_to 'Edit', edit_local_path(@local) %> |
 <%= link_to 'Back', locals_path %>
+<% end %>
+
+<%= render 'shared/block_content', :subtitle => @local.name.capitalize %>

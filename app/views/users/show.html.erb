@@ -1,13 +1,13 @@
-<div class="block" id="block-text">  
-  <div class="content">
-    <h2 class="title">User Show</h2>
-    <div class="inner">
-      <p class="first">
-		<%= render @user %>
-      </p>
-    </div>
-  </div>
-</div>
 
+
+
+<% content_for :block_content do %>
+	<% if current_user.locals.count == 0 -%>
+		<%= "#{I18n.t(:ask_create_local)}" %> <%= link_to(I18n.t(:bt_create_local), new_local_path) %> 
+	<% end -%>
+	<%= render @user %>
+<% end %>
+
+<%= render 'shared/block_content', :subtitle => "User Show" %>
 <% content_for :sidebar, render(:partial => 'shared/sidebar') -%>
 

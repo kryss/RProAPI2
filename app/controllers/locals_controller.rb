@@ -1,6 +1,8 @@
 class LocalsController < ApplicationController
   # GET /locals
   # GET /locals.xml
+  
+  
   def index
     @locals = Local.all
 
@@ -40,7 +42,8 @@ class LocalsController < ApplicationController
   # POST /locals
   # POST /locals.xml
   def create
-    @local = Local.new(params[:local])
+    #@local = Local.new(params[:local])
+    @local = current_user.locals.build(params[:local])
 
     respond_to do |format|
       if @local.save
@@ -80,4 +83,6 @@ class LocalsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
 end
