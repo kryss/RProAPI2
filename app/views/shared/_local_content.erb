@@ -1,0 +1,20 @@
+<div class="block">
+	<div class="secondary-navigation">
+		<ul class="wat-cf">
+			<li class="first <%= "active" if params[:controller] == "locals" %>"><%= link_to t(:local), local_path(session[:selected_local]) %></li>
+			<li class="<%= "active" if params[:controller] == "dishes" %>"><%= link_to t(:dishes), dishes_path %></li>
+			<li class="<%= "active" if params[:controller] == "customers" %>"><%= link_to t(:client), customers_path %></li>
+			<li class=""><a href="#">Storage</a></li>
+			<li class=""><a href="#">Revenues</a></li>
+		</ul>
+	</div>
+	<div class="content">
+		<h2 class="title"><%= subtitle %></h2>
+		<div class="inner">
+			<p class="first">
+			<%= yield :local_content %>
+			</p>
+		</div>
+	</div>
+</div>
+

@@ -4,19 +4,24 @@ class LocalsController < ApplicationController
   
   
   def index
-    @locals = Local.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @locals }
-    end
+    redirect_to root_url
+    # 
+    # @locals = Local.all
+    # 
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.xml  { render :xml => @locals }
+    # end
   end
 
   # GET /locals/1
   # GET /locals/1.xml
   def show
     @local = Local.find(params[:id])
-
+    
+    session[:selected_local] = params[:id]
+    @current_local.destroy unless @current_local.nil?
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @local }
@@ -66,7 +71,7 @@ class LocalsController < ApplicationController
         format.html { redirect_to(@local, :notice => 'Local was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "sho" }
         format.xml  { render :xml => @local.errors, :status => :unprocessable_entity }
       end
     end

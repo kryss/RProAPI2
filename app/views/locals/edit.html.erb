@@ -1,6 +1,9 @@
-<h1>Editing local</h1>
+<% content_for :block_content do %>
+<h1></h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @local %> |
 <%= link_to 'Back', locals_path %>
+<% end -%>
+<%= render 'shared/block_content', :subtitle => "Editing local" %>

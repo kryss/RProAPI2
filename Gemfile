@@ -9,7 +9,7 @@ gem 'faker'
 gem 'mobile-fu'
 gem 'will_paginate'
 gem 'devise'
-
+gem 'acts-as-taggable-on' # https://github.com/mbleigh/acts-as-taggable-on
 
 group :development, :test do
 	gem 'web-app-theme'

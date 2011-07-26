@@ -1,0 +1,29 @@
+<% content_for :local_content do %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dish.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @dish.price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @dish.description %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @dish.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Back', dishes_path %>
+<% end %>
+
+<%= render 'shared/local_content',  :subtitle => @dish.name %>

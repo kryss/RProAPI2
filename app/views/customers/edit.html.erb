@@ -1,0 +1,10 @@
+<% content_for :local_content do %>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @customer %> |
+<%= link_to 'Back', customers_path %>
+<% end %>
+
+<%= render 'shared/local_content',  :subtitle => I18n.t(:editing_customer) %>

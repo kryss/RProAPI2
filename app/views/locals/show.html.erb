@@ -1,7 +1,4 @@
-
-
-
-<% content_for :block_content do %>
+<% content_for :local_content do %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -39,4 +36,4 @@
 <%= link_to 'Back', locals_path %>
 <% end %>
 
-<%= render 'shared/block_content', :subtitle => @local.name.capitalize %>
+<%= render 'shared/local_content',  :subtitle => @local.name.capitalize  %>

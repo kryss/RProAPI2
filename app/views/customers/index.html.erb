@@ -1,0 +1,47 @@
+<% content_for :local_content do %>
+
+<table class="table">
+  <tr>
+    <th class="first">Name</th>
+    <th>Company</th>
+    <th>Phone</th>
+    <th>Mobile phone</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Note</th>
+    <th class="last"></th>
+  </tr>
+
+<% @customers.each_with_index do |customer, i| %>
+  <tr class="<%= (i%2 == 1) ? ("even") : ("odd") %>">
+    <td><%= customer.name %></td>
+    <td><%= customer.company %></td>
+    <td><%= customer.phone %></td>
+    <td><%= customer.mobile_phone %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.note %></td>
+    <td class="last"><%= link_to 'Show', customer %> | 
+    <%= link_to 'Edit', edit_customer_path(customer) %> | 
+    <%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<div class="actions-bar wat-cf">
+  <div class="actions">
+	<%=  link_to  image_tag("/images/icons/plus.png") + I18n.t(:new_customer) , new_customer_path, :class => "button" %>
+  </div>
+
+  <div class="pagination">
+    <span class="disabled prev_page">« Previous</span><span class="current">1</span><a rel="next" href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a rel="next" class="next_page" href="#">Next »</a>
+
+  </div>
+</div>
+
+<% end %>
+
+<%= render 'shared/local_content',  :subtitle => I18n.t(:customers_list) %>

@@ -1,4 +1,8 @@
 RProAPI2::Application.routes.draw do
+  resources :customers
+
+  resources :dishes
+
   get "users/index"
 
   get "users/show"
