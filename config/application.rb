@@ -47,6 +47,7 @@ module RProAPI2
       Devise::SessionsController.layout "sign"
       Devise::RegistrationsController.layout "sign"
       Devise::PasswordsController.layout "sign"
+      
     end
     
   end

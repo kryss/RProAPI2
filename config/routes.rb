@@ -1,4 +1,6 @@
 RProAPI2::Application.routes.draw do
+  get "receiver/input" 
+
   resources :customers
 
   resources :dishes

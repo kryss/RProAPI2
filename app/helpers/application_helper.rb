@@ -3,15 +3,19 @@ module ApplicationHelper
   TODO improve active_tab? helper and make token dynamic and expirable
 =end
 
-  $salt = "foofoo"
+  
 
   def get_current_user_token
-    if current_user
-      Digest::SHA1.hexdigest("--#{current_user.email}-#{$salt}-#{current_user.phone}--")
-    else
-      "TOKEN ERROR !"
-    end
+    return "TOKEN ERROR !" if current_user.nil?
+    get_token(current_user.email, current_user.phone)
   end
+  
+  def get_token(useremail, userphone)
+    salt = "foofoo"
+    return "TOKEN ERROR !" if (useremail.nil? or userphone.nil?)
+    Digest::SHA1.hexdigest("--#{useremail}-#{salt}-#{userphone}--")
+  end
+  
   
   def active_tab?(local)
     "active" if (params[:controller] != "home") and ((params[:controller] == "locals" and params[:id] == local.id.to_s) or 
