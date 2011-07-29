@@ -12,7 +12,8 @@
 		<div class='block' id='block-login'>
 			<h2><%= yield :sign_title %></h2>
 			<div class='content login'>
-				<div class="flash">
+				<div id="wrapper" class="wat-cf">
+			      <div class="flash">
 			        <% flash.each do |type, message| -%>
 			          <div class="message <%= type %>">
 			            <p><%= message %></p>
