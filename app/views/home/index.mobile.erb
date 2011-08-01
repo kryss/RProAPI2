@@ -1,0 +1,17 @@
+
+<div class="toolbar">
+	<h1><%= t(:title) %> </h1>
+</div>
+
+<ul class="rounded">
+	<li class="arrow"><%= t(:overview) %></li>
+	<%  current_user.locals.each do |l| -%>
+		<li class="arrow">  
+			<%= link_to l.name.capitalize, local_url(l) %>
+		  </li>
+	<% end %>
+	<li class="arrow"><%= t(:services) %></li>
+	<li class="arrow"><%= t(:settings) %></li>
+	<li><%= button_to t(:logout), destroy_user_session_url, :method => :delete, :remote => true %> </li>
+
+</ul>

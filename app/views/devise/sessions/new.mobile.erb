@@ -1,0 +1,15 @@
+
+<% content_for :sign_title, "Sign in" -%>
+
+<%= form_for(resource, :as => resource_name, :url => session_url(resource_name), :ref => "external", :remote => true) do |f| %>
+<ul class="edit rounded">
+
+	<li><%= f.email_field :email, :placeholder => "Email", :autocapitalize => "off", :autocorrect => "off", :autocomplete => "off" %></li>
+	<li><%= f.password_field :password, :placeholder => "Password" %></li>
+	<li><%= f.check_box :remember_me, :type => "checkbox", :title => t(:remember_me) if devise_mapping.rememberable? %> 				</li>
+	<li><%= f.submit :value => t(:login)  %></li>
+</ul>
+<% end %>
+
+
+<%= render :partial => "devise/shared/links" %>

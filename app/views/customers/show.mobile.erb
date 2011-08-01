@@ -1,0 +1,20 @@
+<div id="customer_show">
+	<div class="toolbar">
+		<%= link_to 'Back', nil, :class => "back" %>
+		<h1><%= @customer.name.capitalize  %> </h1>
+	</div>
+
+
+
+	<ul class="edgetoedge">
+		<li><%= "#{t(:name)} : #{@customer.name}" %></li>
+		<li><%= "#{t(:company)} : #{@customer.company}" %></li>
+		<li><%= "#{t(:phone)} : #{@customer.phone}" %></li>
+		<li><%= "#{t(:mobile_phone)} : #{@customer.mobile_phone}" %></li>
+		<li><%= "#{t(:email)} : #{@customer.email}" %></li>
+		<li><%= "#{t(:address)} : #{@customer.address}" %></li>
+		<li><%= "#{t(:note)} : #{@customer.note}" %></li>
+	</ul>
+
+</div>
+

@@ -1,3 +1,5 @@
+
+
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -183,6 +185,8 @@ Devise.setup do |config|
   # The :"*/*" and "*/*" formats below is required to match Internet
   # Explorer requests.
   # config.navigational_formats = [:"*/*", "*/*", :html]
+
+  config.navigational_formats = [:"*/*", "*/*", :html, :mobile]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

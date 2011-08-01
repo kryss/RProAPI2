@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @customers }
+      format.mobile { render :layout => false }
     end
   end
 
@@ -18,6 +19,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @customer }
+      format.mobile { render :layout => false }
     end
   end
 

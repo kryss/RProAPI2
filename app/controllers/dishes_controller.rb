@@ -8,17 +8,19 @@ class DishesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @dishes }
+      format.mobile { render :layout => false }
     end
   end
 
   # GET /dishes/1
   # GET /dishes/1.xml
   def show
-    @dish = Dish.find(params[:id])
 
     respond_to do |format|
+    @dish = Dish.find(params[:id])
       format.html # show.html.erb
       format.xml  { render :xml => @dish }
+      format.mobile { render :layout => false }
     end
   end
 

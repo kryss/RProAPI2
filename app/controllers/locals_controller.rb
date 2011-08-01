@@ -18,13 +18,14 @@ class LocalsController < ApplicationController
   # GET /locals/1.xml
   def show
     @local = Local.find(params[:id])
-    
+     
     session[:selected_local] = params[:id]
-    @current_local.destroy unless @current_local.nil?
+   # @current_local.destroy unless @current_local.nil?
     
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @local }
+      format.mobile { render :layout => false }
     end
   end
 
@@ -54,7 +55,7 @@ class LocalsController < ApplicationController
       if @local.save
         format.html { redirect_to(@local, :notice => 'Local was successfully created.') }
         format.xml  { render :xml => @local, :status => :created, :location => @local }
-      else
+      else 
         format.html { render :action => "new" }
         format.xml  { render :xml => @local.errors, :status => :unprocessable_entity }
       end

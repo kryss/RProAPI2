@@ -1,0 +1,13 @@
+<div id="dish_show">
+	<div class="toolbar">
+		<%= link_to 'Back', nil, :class => "back" %>
+		<h1><%= @dish.name.capitalize  %> </h1>
+	</div>
+
+	<ul class="edgetoedge">
+		<li><%= "#{t(:name)} : #{@dish.name}" %></li>
+		<li><%= "#{t(:price)} : #{@dish.price}" %></li>
+		<li><%= "#{t(:description)} : #{@dish.description}" %></li>
+		<li><%= "#{t(:note)} : #{@dish.note}" %></li>
+	</ul>
+</div>
