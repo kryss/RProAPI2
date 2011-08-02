@@ -10,7 +10,6 @@
   </head>
 </head>
 <body>
-
 <div style="min-height: 1093px;" id="animations" class="current">
 
 		<div class="toolbar">
@@ -22,6 +21,7 @@
 		  <div id="flash_messages" class="info">
 		    <% flash.each do |type, message| -%>
 				<%= content_tag :div, message, :id => "flash_#{type}" %>
+				<% flash.discard %>
 		    <% end -%>
 		  </div>
 		<% end %>
@@ -29,6 +29,5 @@
       <%= yield %>
 			
 	</div>
-
 </body>
 </html>

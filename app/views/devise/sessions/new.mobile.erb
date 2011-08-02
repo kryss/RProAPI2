@@ -1,7 +1,14 @@
 
 <% content_for :sign_title, "Sign in" -%>
 
-<%= form_for(resource, :as => resource_name, :url => session_url(resource_name), :ref => "external", :remote => true) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_url(resource_name)) do |f| %>
+<% unless resource.errors.empty? %>
+	<div class="info">
+  		<%= devise_error_messages! %>
+	</div>
+<% end %>
+
+
 <ul class="edit rounded">
 
 	<li><%= f.email_field :email, :placeholder => "Email", :autocapitalize => "off", :autocorrect => "off", :autocomplete => "off" %></li>

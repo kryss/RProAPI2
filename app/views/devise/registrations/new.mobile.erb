@@ -1,11 +1,11 @@
 <% content_for :sign_title, "Sign up" -%>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	<% unless resource.errors.empty? %>
-		<div class="info">
-	  		<%= devise_error_messages! %>
-		</div>
-	<% end %>
+<% unless resource.errors.empty? %>
+	<div class="info">
+  		<%= devise_error_messages! %>
+	</div>
+<% end %>
 
 	<ul class="edit rounded">
 		<li><%= f.email_field :email, :placeholder => t(:email), :autocapitalize => "off", :autocorrect => "off", :autocomplete => "off" %></li>

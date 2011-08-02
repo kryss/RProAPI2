@@ -6,8 +6,8 @@
 	<%= debug(params) if Rails.env.development? %>
 
 	<ul class="rounded">
-		<li class="arrow"><%= link_to t(:dish), dishes_path %></li>
-		<li class="arrow"><%= link_to t(:customers), customers_path  %></li>
+		<li class="arrow"><%= link_to t(:dish), dishes_path %><small class="counter"><%= @local.dishes.count %></small></li>
+		<li class="arrow"><%= link_to t(:customers), customers_path  %><small class="counter"><%= @local.customers.count %></small></li>
 		<li class="arrow"><%= link_to t(:incomes), "#" %></li>
 	</ul>
 </div>

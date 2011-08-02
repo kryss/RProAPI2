@@ -30,3 +30,4 @@ en:
   note: "Note"
   price: "Price"
   description: "Description"
+  reset_password: "Send me reset instructions"

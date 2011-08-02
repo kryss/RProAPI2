@@ -6,9 +6,9 @@
 <ul class="rounded">
 	<li class="arrow"><%= t(:overview) %></li>
 	<%  current_user.locals.each do |l| -%>
-		<li class="arrow">  
-			<%= link_to l.name.capitalize, local_url(l) %>
-		  </li>
+		<li class="arrow">
+			<%= link_to l.name.capitalize , local_path(l) %>
+		</li>
 	<% end %>
 	<li class="arrow"><%= t(:services) %></li>
 	<li class="arrow"><%= t(:settings) %></li>
