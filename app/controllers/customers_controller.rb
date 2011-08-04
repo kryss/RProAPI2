@@ -1,8 +1,11 @@
 class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.xml
+  
+  helper_method :sort_column, :sort_direction
+  
   def index
-    @customers = current_local.customers
+    @customers = current_local.customers.paginate(:per_page => 5, :page => params[:page]).order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,4 +85,14 @@ class CustomersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  def sort_column
+    Customer.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
 end

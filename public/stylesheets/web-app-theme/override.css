@@ -1,1 +1,32 @@
 /* Override here any style defined by web-app-theme */
+.table th .current {
+	padding-right:18px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.table th .asc {
+	background-image: url(/images/icons/up_arrow.png);
+}                             
+                              
+.table th .desc {                    
+	background-image: url(/images/icons/down_arrow.png);
+}
+
+
+
+.pagination em {
+  background: url("images/button-background.png") repeat scroll 0 0 #DDDDDD;
+  border: 1px solid #C3C4BA;
+  border-radius: 2px 2px 2px 2px;
+  color: #111111;
+  margin-right: 5px;
+  min-width: 15px;
+  padding: 6px;
+  text-align: center;
+  background: #261f1f;
+  color: white;
+  border: 1px solid #261f1f;
+  font-style: normal;
+  font-weight: normal;
+}

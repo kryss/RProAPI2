@@ -5,6 +5,7 @@
     <th class="first">Name</th>
     <th>Price</th>
     <th>Description</th>
+    <th>Style</th>
     <th>Note</th>
     <th class="last"></th>
   </tr>
@@ -14,6 +15,7 @@
     <td><%= dish.name %></td>
     <td><%= dish.price %></td>
     <td><%= dish.description %></td>
+	<td><%= dish.style_list.first if dish.style_list %></td>
     <td><%= dish.note %></td>
     <td class="last"><%= link_to 'Show', dish %> | 
     <%= link_to 'Edit', edit_dish_path(dish) %>|

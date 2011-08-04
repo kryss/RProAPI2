@@ -3,7 +3,6 @@ class DishesController < ApplicationController
   # GET /dishes.xml
   def index
     @dishes = current_local.dishes
-    logger.debug "DEBUG : " + current_local.name
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,9 +14,9 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.xml
   def show
-
-    respond_to do |format|
     @dish = Dish.find(params[:id])
+ 
+    respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dish }
       format.mobile { render :layout => false }

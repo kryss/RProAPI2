@@ -1,5 +1,5 @@
 RProAPI2::Application.routes.draw do
-  get "receiver/input" 
+  post "receiver/input" 
 
   resources :customers
 

@@ -6,7 +6,7 @@ gem 'sqlite3'
 gem 'fastercsv'
 gem 'populator'
 gem 'faker'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.pre4'
 gem 'devise'
 gem 'acts-as-taggable-on' # https://github.com/mbleigh/acts-as-taggable-on
 

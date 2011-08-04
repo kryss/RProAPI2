@@ -2,13 +2,14 @@
 
 <table class="table">
   <tr>
-    <th class="first">Name</th>
-    <th>Company</th>
-    <th>Phone</th>
-    <th>Mobile phone</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Note</th>
+    <th class="first"><%= sortable "name" %></th>
+    <th><%= sortable "company" %></th>
+    <th><%= sortable "phone" %></th>
+    <th><%= sortable "mobile_phone", "Mobile Phone"  %></th>
+    <th><%= sortable "email" %></th>
+    <th><%= sortable "address" %></th>
+    <th><%= sortable "note" %></th>
+	<th><%= sortable "consumption" %></th>
     <th class="last"></th>
   </tr>
 
@@ -21,6 +22,7 @@
     <td><%= customer.email %></td>
     <td><%= customer.address %></td>
     <td><%= customer.note %></td>
+	<td><%= customer.consumption %></td>
     <td class="last"><%= link_to 'Show', customer %> | 
     <%= link_to 'Edit', edit_customer_path(customer) %> | 
     <%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -36,9 +38,9 @@
 	<%=  link_to  image_tag("/images/icons/plus.png") + I18n.t(:new_customer) , new_customer_path, :class => "button" %>
   </div>
 
-  <div class="pagination">
-    <span class="disabled prev_page">« Previous</span><span class="current">1</span><a rel="next" href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a rel="next" class="next_page" href="#">Next »</a>
 
+	<div class="pagination">
+  		<%= will_paginate @customers  %>
   </div>
 </div>
 

@@ -31,3 +31,6 @@ en:
   price: "Price"
   description: "Description"
   reset_password: "Send me reset instructions"
+  consumption: "Consumption"
+  previous: "Previous"
+  next: "Next"
