@@ -1,8 +1,10 @@
 class DishesController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   # GET /dishes
   # GET /dishes.xml
   def index
-    @dishes = current_local.dishes
+    @dishes = current_local.dishes.paginate(:per_page => 5, :page => params[:page]).order(sort_column + " " + sort_direction)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -82,4 +84,11 @@ class DishesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  private 
+  def sort_column
+    Dish.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+  
 end

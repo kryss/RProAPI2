@@ -2,11 +2,11 @@
 
 <table class="table">
   <tr>
-    <th class="first">Name</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th>Style</th>
-    <th>Note</th>
+    <th class="first"><%= sortable "name" %></th>
+    <th><%= sortable "price" %></th>
+    <th><%= sortable "description" %></th>
+    <th><%= sortable "style_list" %></th>
+    <th><%= sortable "note" %></th>
     <th class="last"></th>
   </tr>
 
@@ -33,11 +33,9 @@
 	<%=  link_to  image_tag("/images/icons/plus.png") + I18n.t(:new_dish) , new_dish_path, :class => "button" %>
   </div>
 
-  <div class="pagination">
-    <span class="disabled prev_page">« Previous</span><span class="current">1</span><a rel="next" href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a rel="next" class="next_page" href="#">Next »</a>
-
+	<div class="pagination">
+  		<%= will_paginate @customers  %>
   </div>
-</div>
 
 <% end %>
 

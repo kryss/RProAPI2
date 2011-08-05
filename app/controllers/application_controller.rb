@@ -35,4 +35,9 @@ class ApplicationController < ActionController::Base
     request.format = :mobile if mobile_device?
   end
   
+  protected 
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
 end
